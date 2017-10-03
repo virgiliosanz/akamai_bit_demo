@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Multiple Alternative Audio Tracks - Example</title>
+    <link href="controlbar.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+    <link href="video-js.css" rel="stylesheet">
+</head>
+<body data-gr-c-s-loaded="true" data-feedly-mini="yes">
+		<div class="top">
+    		<div><img class="logo" src="Akamai-Logo-RGB.png"></div>
+				<div class="title">Bit 2017 - Akamai Low Latency - <span id="curr_time"></span></div>
+    </div>
+    <p> </p>
+		<div id="VideoContainer">
+    		<video id="maat-player" autoplay
+    				class="video-js vjs-default-skin"
+    				width="1280" height="720" controls="">
+    				<source src="https://vsanzbit2017.akamaized.net/hls/live/572083/bittest1/master.m3u8"
+    				type="application/x-mpegURL">
+    		</video>
+    </div>
+</body>
+
+<script src="video.js"></script>
+<script src="videojs-contrib-hls.js"></script>
+<script>
+  Number.prototype.pad = function(size) {
+    var s = String(this);
+    while (s.length < (size || 2)) {s = "0" + s;}
+    return s;
+  }
+
+  videojs.Hls.GOAL_BUFFER_LENGTH = 2;
+
+  (function(window, videojs) {
+    var player = window.player = videojs('maat-player');
+  }(window, window.videojs));
+</script>
+<script>
+
+  function update_clock() {
+    var d = new Date();
+    var time_element = document.getElementById("curr_time");
+    	time_element.textContent =
+    			d.getHours().pad(2) + ":" +
+    			d.getMinutes().pad(2) + ":" +
+    			d.getSeconds().pad(2);
+  }
+  setInterval(update_clock, 500);
+</script>
+</html>

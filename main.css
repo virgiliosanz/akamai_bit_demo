@@ -1,0 +1,105 @@
+table
+{
+  font-size: large;
+}
+
+
+#startButton{
+  padding:5px 15px;
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: x-large;
+  background-color: black;
+  color:white;
+  box-shadow: 0px 0px 5px black;
+}
+
+td
+{
+  padding:20px;
+}
+
+div#form {
+    margin: 5px;
+}
+
+div#form div{
+    padding-bottom: 10px;
+}
+
+div#form label, p {
+    padding-right: 10px;
+    padding-left: 5px;
+}
+
+
+
+#player {
+  width:640px;
+  height:360px;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 0px 15px black;
+}
+
+#manifest{
+  width: 600px;
+  font-size:medium;
+  border:0 none;
+  cursor:pointer;
+  background-color: #222222;
+  color:white;
+  box-shadow: 0px 0px 5px black;
+}
+
+#delayInFragments{
+  width: 30px;
+  border:0 none;
+  font-size:medium;
+  cursor:pointer;
+  background-color: #222222;
+  color:white;
+  box-shadow: 0px 0px 5px black;
+}
+
+.top {
+  width: 100%;
+  background: rgba(0, 0, 0, 1);
+  height:80px;
+  align-items: center;
+}
+
+.title
+{
+  font-size: xx-large;
+  font-weight: bolder;
+  color: orange;
+  position: absolute;
+  left: 35px;
+  top: 36px;
+
+
+
+}
+.logo {
+  height: 60px;
+  position: absolute;
+  right: 30px;
+  top: 28px;
+}
+
+.clock {
+    color:#FFF; font-size: 60pt
+}
+
+html {
+  font-family: 'Times New Roman';
+  color: white;
+  padding:10px;
+  background: url(background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
