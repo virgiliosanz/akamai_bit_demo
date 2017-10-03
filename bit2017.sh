@@ -26,6 +26,7 @@ VIDEO_MAX_BITRATE="4000K"
 AUDIO_BITRATE="192K"
 PROFILE=baseline
 SEGMENT_SIZE_SECS=2
+SEGMENT_NUMBER=3
 RESOLUTION=1280x720
 
 # ias
@@ -55,7 +56,7 @@ ffmpeg -stream_loop -1 \
     -acodec aac \
     -ab ${AUDIO_BITRATE} \
     -vf drawbox="x=0:y=0:width=iw/4:height=ih/20:color=black:t=max",drawtext="text='%{localtime}':x=25:y=10:fontfile=/Library/Fonts/Times New Roman Bold.ttf:fontsize=32:fontcolor=#ffa500" \
-    -f hls -hls_allow_cache 1 -hls_time ${SEGMENT_SIZE_SECS} -hls_list_size 3 \
+    -f hls -hls_allow_cache 1 -hls_time ${SEGMENT_SIZE_SECS} -hls_list_size ${SEGMENT_NUMBER} \
     -hls_flags program_date_time -hls_playlist_type event \
     -use_localtime 1 \
     -method PUT ${AKAMAI_EP}
@@ -71,7 +72,7 @@ ffmpeg -stream_loop -1 \
 #	-profile:v high \
 #	-vb 8000k -bufsize 8000k -maxrate 10000k \
 #	-acodec aac \
-#	-f hls -hls_allow_cache 1 -hls_time ${SEGMENT_SIZE_SECS} -hls_list_size 3 \
+#       -f hls -hls_allow_cache 1 -hls_time ${SEGMENT_SIZE_SECS} -hls_list_size ${SEGMENT_NUMBER} \
 #	-hls_flags program_date_time -hls_playlist_type event \
 #	-use_localtime 1 \
 #        -vf drawbox="x=0:y=0:width=iw/4:height=ih/20:color=black:t=max",drawtext="text='%{localtime}':x=25:y=10:fontfile=/Library/Fonts/Times New Roman Bold.ttf:fontsize=96:fontcolor=#ffa500" \
